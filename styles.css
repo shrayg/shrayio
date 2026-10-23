@@ -13,9 +13,11 @@
     --font-sans: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
-    --sidebar-width: 280px;
-    --content-max-width: 1180px;
+    --sidebar-width: 264px;
+    --content-max-width: 1240px;
     --page-padding: 40px;
+    --content-gutter-left: 96px;
+    --content-gutter-right: 40px;
     --bracket-size: 10px;
     --bracket-weight: 1px;
     --frame-gap: 10px;
@@ -122,7 +124,7 @@ p {
 .content {
     width: 100%;
     max-width: var(--content-max-width);
-    padding: var(--page-padding) 56px;
+    padding: var(--page-padding) var(--content-gutter-right) var(--page-padding) var(--content-gutter-left);
 }
 
 .section + .section {
@@ -150,7 +152,7 @@ p {
 .grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 48px 32px;
+    gap: 48px 28px;
 }
 
 /* Card */
@@ -272,7 +274,8 @@ p {
 
 .art-dim {
     font-family: var(--font-mono);
-    font-size: 11px;
+    font-size: clamp(9px, 3.2cqw, 11px);
+    white-space: nowrap;
     font-weight: 400;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -285,9 +288,10 @@ p {
 
 .card-title {
     display: flex;
+    flex-wrap: wrap;
     align-items: baseline;
     justify-content: space-between;
-    gap: 12px;
+    gap: 2px 12px;
 }
 
 .card-title h3 {
@@ -310,6 +314,8 @@ p {
 
 .years {
     flex-shrink: 0;
+    margin-left: auto;
+    white-space: nowrap;
     font-family: var(--font-mono);
     font-size: 11.5px;
     color: var(--color-text);
@@ -352,7 +358,7 @@ p {
 
 /* Responsive */
 
-@media (max-width: 1180px) {
+@media (max-width: 1280px) {
     .grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
