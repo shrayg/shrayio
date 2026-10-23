@@ -14,10 +14,9 @@
     --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
     --sidebar-width: 264px;
-    --content-max-width: 1240px;
+    --content-max-width: 1280px;
     --page-padding: 40px;
-    --content-gutter-left: 96px;
-    --content-gutter-right: 40px;
+    --content-gutter: clamp(64px, 7.5vw, 136px);
     --bracket-size: 10px;
     --bracket-weight: 1px;
     --frame-gap: 10px;
@@ -124,7 +123,8 @@ p {
 .content {
     width: 100%;
     max-width: var(--content-max-width);
-    padding: var(--page-padding) var(--content-gutter-right) var(--page-padding) var(--content-gutter-left);
+    margin-inline: auto;
+    padding: var(--page-padding) var(--content-gutter);
 }
 
 .section + .section {
@@ -358,7 +358,7 @@ p {
 
 /* Responsive */
 
-@media (max-width: 1280px) {
+@media (max-width: 1360px) {
     .grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
