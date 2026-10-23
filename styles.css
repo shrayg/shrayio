@@ -454,33 +454,6 @@ p {
     color: var(--color-body-text);
 }
 
-.subproject {
-    display: grid;
-    grid-template-columns: minmax(0, 300px) minmax(0, 1fr);
-    gap: 28px;
-    align-items: start;
-    scroll-margin-top: var(--page-padding);
-}
-
-.subproject + .subproject {
-    margin-top: 48px;
-}
-
-.subproject-body p {
-    margin: 10px 0 0;
-}
-
-.subproject .detail-links {
-    margin-top: 14px;
-}
-
-@media (max-width: 640px) {
-    .subproject {
-        grid-template-columns: 1fr;
-        gap: 16px;
-    }
-}
-
 .todo {
     font-style: italic;
     color: var(--color-faint);
