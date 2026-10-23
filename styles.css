@@ -144,7 +144,7 @@ p {
 
 .section-rule {
     height: 1px;
-    background: linear-gradient(to right, var(--color-text), transparent);
+    background: linear-gradient(to right, var(--color-text) 0%, var(--color-text) 35%, transparent 100%);
 }
 
 .grid {
