@@ -361,13 +361,16 @@ p {
 /* Project detail pages */
 
 .detail {
-    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    max-width: 1240px;
     margin-inline: auto;
     padding: var(--page-padding) 24px;
 }
 
 .detail-nav {
-    margin-bottom: 64px;
+    margin-bottom: 48px;
     font-family: var(--font-mono);
     font-size: 12px;
 }
@@ -393,7 +396,15 @@ p {
     color: var(--color-faint);
 }
 
-.detail-head h1 {
+.detail-body {
+    flex: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: 56px;
+    align-items: center;
+}
+
+.detail-info h1 {
     margin: 0;
     font-size: clamp(32px, 5vw, 44px);
     font-weight: 600;
@@ -413,17 +424,12 @@ p {
     margin: 0;
 }
 
-.detail-lead {
-    margin: 22px 0 0;
-    font-size: 17px;
-    color: var(--color-muted);
-}
-
 .detail-links {
     display: flex;
-    flex-wrap: wrap;
-    gap: 8px 24px;
-    margin: 22px 0 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 24px 0 0;
     padding: 0;
     list-style: none;
     font-family: var(--font-mono);
@@ -435,32 +441,31 @@ p {
     color: var(--color-faint);
 }
 
-.detail-shot {
-    margin-top: 48px;
+.detail-desc {
+    margin-top: 28px;
+}
+
+.detail-desc p {
+    margin: 0 0 14px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--color-body-text);
 }
 
 .detail-shot .screen img {
     filter: none;
 }
 
-.detail-section {
-    margin-top: 72px;
-}
-
-.detail-section p,
-.detail-section li {
-    font-size: 16px;
-    line-height: 1.7;
-    color: var(--color-body-text);
-}
-
-.todo {
-    font-style: italic;
-    color: var(--color-faint);
-}
-
 .detail .footer {
-    margin-top: 104px;
+    margin-top: 64px;
+}
+
+@media (max-width: 900px) {
+    .detail-body {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        align-items: start;
+    }
 }
 
 /* Reveal on scroll (only when JS is running, so content is never hidden without it) */
